@@ -1,6 +1,7 @@
 package com.xm4399.flink.datagen;
 
 import com.xm4399.flink.constant.Types;
+import com.xm4399.flink.utils.EncodingUtils;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.DataTypes;
@@ -15,6 +16,7 @@ import org.apache.flink.table.types.DataType;
 
 import java.lang.reflect.Field;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class DataGenerator<T> {
     public static final String IDENTIFIER = "datagen";
@@ -34,17 +36,26 @@ public class DataGenerator<T> {
     }
 
     private void initializeDataGenTable(DataGenDescriptor descriptor){
+        Schema schema = getSchema(descriptor);
+        CatalogTable catalogTable = CatalogTable.of(
+                schema,
+                null,
+                Collections.emptyList(),
+                getConnectorOptions(descriptor)
+        );
+        String tableOptions = catalogTable.getOptions().entrySet().stream()
+                .map(e -> EncodingUtils.stringifyOption(e.getKey(), e.getValue()))
+                .collect(Collectors.joining("\n"));
+
+        String tableName = descriptor.getPojoClass().getSimpleName();
+        System.out.printf("Table `%s`\n  %s \n %s\n", tableName, schema, tableOptions);
+
         catalogManager.createTemporaryTable(
-                CatalogTable.of(
-                        getSchema(descriptor),
-                        null,
-                        Collections.emptyList(),
-                        getConnectorOptions(descriptor)
-                ),
+                catalogTable,
                 ObjectIdentifier.of(
                         catalogManager.getCurrentCatalog(),
                         catalogManager.getCurrentDatabase(),
-                        descriptor.getPojoClass().getSimpleName()
+                        tableName
                 ),
                 false
         );

@@ -1,6 +1,5 @@
 package com.xm4399.flink.datagen;
 
-import com.xm4399.flink.datagen.pojo.DummyPojo;
 import com.xm4399.flink.datagen.pojo.OrderInfo;
 import com.xm4399.flink.datagen.pojo.UserInfo;
 import org.apache.flink.streaming.api.datastream.DataStream;
@@ -36,7 +35,7 @@ public class DataGeneratorTest {
 
         DataStream<UserInfo> userStream = dataGenerator.toDataStream(userDescriptor);
         DataStream<OrderInfo> orderStream = dataGenerator.toDataStream(orderDescriptor);
-        Arrays.stream(dataGenerator.getTableEnv().listTables()).forEach(System.out::println);
+//        Arrays.stream(dataGenerator.getTableEnv().listTables()).forEach(System.out::println);
         userStream.print();
         orderStream.print();
         env.execute();
