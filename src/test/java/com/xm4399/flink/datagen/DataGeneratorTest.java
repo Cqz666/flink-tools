@@ -32,10 +32,8 @@ public class DataGeneratorTest {
                 .rowsPerSecond(2)
                 .numberOfRows(10000)
                 .build();
-
         DataStream<UserInfo> userStream = dataGenerator.toDataStream(userDescriptor);
         DataStream<OrderInfo> orderStream = dataGenerator.toDataStream(orderDescriptor);
-//        Arrays.stream(dataGenerator.getTableEnv().listTables()).forEach(System.out::println);
         userStream.print();
         orderStream.print();
         env.execute();

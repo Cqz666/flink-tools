@@ -48,7 +48,7 @@ public class DataGenerator<T> {
                 .collect(Collectors.joining("\n"));
 
         String tableName = descriptor.getPojoClass().getSimpleName();
-        System.out.printf("Table `%s`\n  %s \n %s\n", tableName, schema, tableOptions);
+        System.out.printf("Table `%s`\n  %s \n %s%n%n", tableName, schema, tableOptions);
 
         catalogManager.createTemporaryTable(
                 catalogTable,

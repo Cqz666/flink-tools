@@ -1,27 +1,9 @@
-## flink-tools 工具包
-### 1.  DataGenerator (DataStream模拟数据生成器）
-* 通过声明式的API结合POJO自定义注解，快速生成DataStream模拟数据
-* 支持datagen连接器所有option
+package com.xm4399.flink.datagen;
 
-## Getting started
-### 1. Building
-```shell script
-mvn clean install
-```
-### 2. import
-```xml
-<dependency>
-    <groupId>com.xm4399</groupId>
-    <artifactId>flink-tools</artifactId>
-    <version>1.0-SNAPSHOT</version>
-</dependency>
-```
+import lombok.Data;
+import org.apache.flink.streaming.api.datastream.DataStream;
+import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
-***PS: 等有需要再发布到私服...***
-
-## Use case
-### 1. DataGenerator
-```java
 public class DataGeneratorUseCase {
 
     public static void main(String[] args) throws Exception {
@@ -55,4 +37,4 @@ public class DataGeneratorUseCase {
     }
 
 }
-```
+
