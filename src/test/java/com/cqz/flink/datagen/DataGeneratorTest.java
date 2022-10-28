@@ -1,13 +1,11 @@
-package com.xm4399.flink.datagen;
+package com.cqz.flink.datagen;
 
-import com.xm4399.flink.datagen.pojo.OrderInfo;
-import com.xm4399.flink.datagen.pojo.UserInfo;
+import com.cqz.flink.datagen.pojo.OrderInfo;
+import com.cqz.flink.datagen.pojo.UserInfo;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Arrays;
 
 
 public class DataGeneratorTest {

@@ -1,4 +1,4 @@
-package com.xm4399.flink.datagen;
+package com.cqz.flink.datagen;
 
 import lombok.Data;
 import org.apache.flink.streaming.api.datastream.DataStream;

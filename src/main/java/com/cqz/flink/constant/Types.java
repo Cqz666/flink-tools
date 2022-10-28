@@ -1,4 +1,4 @@
-package com.xm4399.flink.constant;
+package com.cqz.flink.constant;
 
 public class Types {
 

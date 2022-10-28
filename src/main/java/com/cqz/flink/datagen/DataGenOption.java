@@ -1,4 +1,4 @@
-package com.xm4399.flink.datagen;
+package com.cqz.flink.datagen;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

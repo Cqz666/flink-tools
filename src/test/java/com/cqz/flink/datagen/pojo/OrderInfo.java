@@ -1,6 +1,6 @@
-package com.xm4399.flink.datagen.pojo;
+package com.cqz.flink.datagen.pojo;
 
-import com.xm4399.flink.datagen.DataGenOption;
+import com.cqz.flink.datagen.DataGenOption;
 import lombok.Data;
 
 import java.sql.Timestamp;

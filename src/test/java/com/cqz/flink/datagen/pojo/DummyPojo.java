@@ -1,4 +1,4 @@
-package com.xm4399.flink.datagen.pojo;
+package com.cqz.flink.datagen.pojo;
 
 import lombok.Data;
 

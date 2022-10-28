@@ -1,7 +1,7 @@
-package com.xm4399.flink.datagen;
+package com.cqz.flink.datagen;
 
-import com.xm4399.flink.constant.Types;
-import com.xm4399.flink.utils.EncodingUtils;
+import com.cqz.flink.utils.EncodingUtils;
+import com.cqz.flink.constant.Types;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.DataTypes;

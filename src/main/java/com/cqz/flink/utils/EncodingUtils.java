@@ -1,4 +1,4 @@
-package com.xm4399.flink.utils;
+package com.cqz.flink.utils;
 
 import org.apache.flink.configuration.GlobalConfiguration;
 

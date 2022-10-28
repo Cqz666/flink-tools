@@ -11,13 +11,11 @@ mvn clean install
 ### 2. import
 ```xml
 <dependency>
-    <groupId>com.xm4399</groupId>
+    <groupId>com.cqz</groupId>
     <artifactId>flink-tools</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
 ```
-
-***PS: 等有需要再发布到私服...***
 
 ## Use case
 ### 1. DataGenerator
